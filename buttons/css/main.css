@@ -1,0 +1,958 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.element-container {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/*region rotating-button*/
+#rotating-button {
+  text-decoration: none;
+  color: #272727;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-size: 45px;
+  border: 5px solid #272727;
+  padding: 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+#rotating-button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff200;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transform-origin: bottom left;
+  transform: rotate(-90deg) scale(3);
+  transition: transform 1s;
+}
+
+#rotating-button:hover::before {
+  transform: rotate(0deg) scale(3);
+}
+/*endregion*/
+
+/*region swipe-button-1*/
+#swipe-button {
+  text-decoration: none;
+  color: #351435;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-size: 40px;
+  border: 3px solid #351435;
+  padding: 40px 80px;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+#swipe-button:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background-color: #351435;
+  transform: translateX(-100%);
+  transition: transform 1s;
+}
+
+#swipe-button:hover {
+  color: white;
+}
+
+#swipe-button:hover:before {
+  transform: translateX(0);
+}
+/*endregion*/
+
+/*region assemble-button*/
+#assemble-button {
+  padding: 40px 80px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #262626;
+  background-color: transparent;
+  font-size: 45px;
+  letter-spacing: 2px;
+  border: 5px solid #262626;
+  position: relative;
+  transition: 1s;
+}
+
+#assemble-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+  z-index: -1;
+  transition: 1s;
+  transform: rotateX(90deg);
+}
+
+#assemble-button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+  z-index: -1;
+  transition: 1s;
+  transform: rotateY(90deg);
+}
+
+#assemble-button:hover {
+  color: white;
+}
+
+#assemble-button:hover:before {
+  transform: rotateX(0deg);
+}
+
+#assemble-button:hover:after {
+  transform: rotateY(0deg);
+}
+/*endregion*/
+
+/*region stretching-button*/
+#stretching-button {
+  text-decoration: none;
+  padding: 40px 80px;
+  color: #e1332d;
+  background-color: transparent;
+  border: 3px solid #e1332d;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  transition: all 0.5s;
+}
+
+#stretching-button:hover {
+  font-weight: 900;
+  letter-spacing: 10px;
+  border: 7px solid #e1332d;
+}
+/*endregion*/
+
+/*region swipe-button-2*/
+#swipe-button-2 {
+  text-decoration: none;
+  color: #272727;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-size: 40px;
+  border: 3px solid #272727;
+  padding: 40px 80px;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+#swipe-button-2:before {
+  content: 'Hell Yeah!';
+  color: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f44336;
+  transform: translateY(-100%);
+  transition: transform 1s;
+}
+
+#swipe-button-2:hover {
+  color: white;
+}
+
+#swipe-button-2:hover:before {
+  transform: translateY(0);
+}
+/*endregion*/
+
+/*region glowing-button*/
+#glowing-button {
+  text-decoration: none;
+  color: #272727;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-size: 40px;
+  border: 3px solid #272727;
+  padding: 40px 80px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+#glowing-button:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+#glowing-button:before {
+  content: '';
+  background-color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  transform: translateX(-100%) rotate(45deg);
+  transition: all 0.5s;
+}
+
+#glowing-button:hover:before {
+  transform: translateX(100%) rotate(45deg);
+}
+/*endregion*/
+
+/*region layer-swapping-button*/
+#layer-swapping-button {
+  text-decoration: none;
+  background-color: #262626;
+  font-family: sans-serif;
+  font-size: 40px;
+  border: 4px solid #262626;
+  padding: 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+#layer-swapping-button:before,
+#layer-swapping-button:after {
+  content: 'Hover Me';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fffa65;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+
+#layer-swapping-button:after {
+  transform: translate(-100%, 100%);
+}
+
+#layer-swapping-button:hover:before {
+  transform: translate(100%, -100%);
+}
+
+#layer-swapping-button:hover:after {
+  transform: translate(0%, 0%);
+}
+/*endregion*/
+
+/*region text-scaling-button*/
+#text-scaling-button {
+  text-decoration: none;
+  color: #262626;
+  font-family: sans-serif;
+  font-size: 40px;
+  border: 3px solid #262626;
+  padding: 40px 80px;
+  background-color: transparent;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+#text-scaling-button:before {
+  content: 'Hover Me';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #262626;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(5);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+#text-scaling-button:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+/*endregion*/
+
+/*region circular-swapping-button*/
+#circular-swapping-button {
+  border: 2px solid tomato;
+  background: none;
+  color: tomato;
+  padding: 40px 80px;
+  font-family: sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+#circular-swapping-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: tomato;
+  z-index: -1;
+  border-radius: 0 0 50% 50%;
+  transition: all 0.5s;
+}
+
+#circular-swapping-button:hover {
+  color: white;
+}
+
+#circular-swapping-button:hover:before {
+  height: 190%;
+}
+/*endregion*/
+
+/*region rotating-3-layers-button*/
+#rotating-3-layers-button {
+  padding: 40px 80px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #f8c607;
+  color: #000c76;
+  border: 3px solid #000c76;
+  font-family: sans-serif;
+  font-size: 40px;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+#rotating-3-layers-button:before,
+#rotating-3-layers-button:after {
+  content: 'Hover Me';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #18ec76;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateX(270deg);
+  transform-origin: top;
+  transition: all 0.5s;
+}
+
+#rotating-3-layers-button:after {
+  background-color: #ff6571;
+  transition-delay: 0.25s;
+  transform-origin: bottom;
+}
+
+#rotating-3-layers-button:hover:before,
+#rotating-3-layers-button:hover:after {
+  transform: rotateX(0deg);
+}
+/*endregion*/
+
+/*region left-to-right-layers-button*/
+#left-to-right-layers-button {
+  font-family: sans-serif;
+  padding: 40px 80px;
+  font-size: 40px;
+  background: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 4px;
+  color: transparent;
+  border: 3px solid #5a3c0e;
+  position: relative;
+  overflow: hidden;
+}
+
+#left-to-right-layers-button:before,
+#left-to-right-layers-button:after {
+  content: 'Hover Me';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fc8117;
+  color: #5a3c0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+
+#left-to-right-layers-button:after {
+  left: -100%;
+  transform: scale(0) rotateY(0deg);
+  opacity: 0;
+}
+
+#left-to-right-layers-button:hover:before {
+  left: 100%;
+  transform: rotateY(360deg) scale(0);
+  opacity: 0;
+}
+
+#left-to-right-layers-button:hover:after {
+  left: 0;
+  transform: scale(1) rotateY(360deg);
+  opacity: 1;
+}
+/*endregion*/
+
+/*region circles-to-background-button*/
+#circles-to-background-button {
+  padding: 40px 80px;
+  color: #145000;
+  background-color: transparent;
+  font-size: 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  text-align: center;
+  transition: all 0.5s;
+  position: relative;
+}
+
+#circles-to-background-button:before,
+#circles-to-background-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #145000;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+  z-index: -1;
+  opacity: 0;
+}
+
+#circles-to-background-button:before {
+  left: 0;
+  box-shadow: -100px 0 0 #145000;
+}
+
+#circles-to-background-button:after {
+  right: 0;
+  box-shadow: 100px 0 0 #145000;
+}
+
+#circles-to-background-button:hover:before {
+  left: 50%;
+  box-shadow: 40px 0 0 #145000;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+#circles-to-background-button:hover:after {
+  right: 50%;
+  box-shadow: -40px 0 0 #145000;
+  transform: translate(50%, -50%);
+  opacity: 1;
+}
+
+#circles-to-background-button span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #145000;
+  border-radius: 8px;
+  transform: scale(0);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+#circles-to-background-button:hover {
+  color: white;
+  transition-delay: 0.4s;
+}
+
+#circles-to-background-button:hover span {
+  transform: scale(1);
+  transition-delay: 0.4s;
+}
+/*endregion*/
+
+/*region two-layers-button*/
+#two-layers-button {
+  padding: 40px 80px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-family: sans-serif;
+  border: none;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+  color: white;
+  transition: all 0.3s;
+}
+
+#two-layers-button:before,
+#two-layers-button:after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 100%;
+  height: 100%;
+  background-color: #20caff;
+  z-index: -1;
+  mix-blend-mode: multiply;
+  transform-origin: top;
+  transition: all 0.3s;
+}
+
+#two-layers-button:after {
+  top: 5px;
+  left: 5px;
+  background-color: #ff7675;
+  transform-origin: bottom;
+}
+
+#two-layers-button:hover {
+  color: #272727;
+}
+
+#two-layers-button:hover:before {
+  top: -8px;
+  left: 0;
+  transform: perspective(1000px) rotateX(75deg);
+}
+
+#two-layers-button:hover:after {
+  top: 8px;
+  left: 0;
+  transform: perspective(1000px) rotateX(-75deg);
+}
+/*endregion*/
+
+/*region split-button*/
+#split-button {
+  font-family: sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 40px 80px;
+  font-size: 40px;
+  color: #4307aa;
+  letter-spacing: 3px;
+  border: 3px solid #4307aa;
+  background-color: transparent;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+#split-button span {
+  width: 100%;
+  height: 100%;
+}
+
+#split-button:before,
+#split-button:after,
+#split-button span:before,
+#split-button span:after {
+  content: '';
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #4307aa;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+#split-button:before {
+  top: 0;
+  left: -25%;
+}
+
+#split-button:after {
+  top: -100%;
+  left: 25%;
+  width: 26%;
+  transition-delay: 0.1s;
+}
+
+#split-button:hover {
+  color: white;
+}
+
+#split-button:hover:before {
+  top: 0;
+  left: 0;
+}
+
+#split-button:hover:after {
+  top: 0;
+}
+
+#split-button span:before {
+  bottom: -100%;
+  right: 25%;
+  transition-delay: 0.2s;
+}
+
+#split-button:hover span:before {
+  bottom: 0;
+}
+
+#split-button span:after {
+  top: 0;
+  right: -25%;
+  transition-delay: 0.3s;
+}
+
+#split-button:hover span:after {
+  right: 0;
+}
+/*endregion*/
+
+/*region border-swapping-button*/
+#border-swapping-button {
+  font-family: verdana, sans-serif;
+  text-decoration: none;
+  padding: 40px 80px;
+  text-transform: uppercase;
+  font-size: 40px;
+  letter-spacing: 3px;
+  position: relative;
+  background: none;
+  border: none;
+  color: tomato;
+}
+
+#border-swapping-button:before,
+#border-swapping-button:after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  border-left: 2px solid tomato;
+  border-right: 2px solid teal;
+  transition: all 1s;
+}
+
+#border-swapping-button:after {
+  top: 0;
+  left: -5%;
+  width: 110%;
+  height: 100%;
+  border-top: 2px solid tomato;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid teal;
+  transition-delay: 0.2s;
+}
+
+#border-swapping-button:hover:before {
+  transform: rotateY(180deg);
+}
+
+#border-swapping-button:hover:after {
+  transform: rotateX(180deg);
+}
+/*endregion*/
+
+  /*
+   * Remove text-shadow in selection highlight:
+   * https://twitter.com/miketaylr/status/12228805301
+   *
+   * Vendor-prefixed and regular ::selection selectors cannot be combined:
+   * https://stackoverflow.com/a/16982510/7133471
+   *
+   * Customize the background color to match your design.
+   */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
