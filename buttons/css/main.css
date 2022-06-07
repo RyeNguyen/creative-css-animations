@@ -883,6 +883,264 @@ button {
 }
 /*endregion*/
 
+/*region wavy-button*/
+#wavy-button {
+  text-decoration: none;
+  padding: 40px 80px;
+  color: #00aeff;
+  font-size: 40px;
+  letter-spacing: 3px;
+  border: 3px solid #00aeff;
+  text-transform: uppercase;
+  background: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+#wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: calc(100% + 22px);
+  left: 0;
+  background-color: #00aeff;
+  transition: all 1s;
+  z-index: -1;
+}
+
+#wave:before {
+  content: '';
+  position: absolute;
+  top: -22px;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  background: url('../img/wave.png');
+  animation: wavy 0.5s linear infinite;
+}
+
+@keyframes wavy {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    background-position-x: 118px;
+  }
+}
+
+#wavy-button:hover {
+  color: white;
+}
+
+#wavy-button:hover #wave {
+  top: 0;
+}
+/*endregion*/
+
+/*region cuts-button*/
+#cuts-button {
+  text-decoration: none;
+  padding: 40px 80px;
+  font-size: 40px;
+  color: #272727;
+  position: relative;
+  background-color: transparent;
+  text-transform: capitalize;
+  transition: all 0.3s;
+  border: none;
+  overflow: hidden;
+}
+
+#cuts-button span {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  border: 3px solid #272727;
+  z-index: -1;
+  box-sizing: border-box;
+}
+
+#cuts-button span:before {
+  content: '';
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.3s;
+}
+
+#cuts-button:hover {
+  color: white;
+}
+
+#cuts-button:hover span:before {
+  width: 100%;
+  background-color: #272727;
+  transform: translate(-50%, -50%) rotate(60deg);
+}
+/*endregion*/
+
+/*region skewed-parts-button*/
+#skewed-parts-button {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  padding: 40px 80px;
+  letter-spacing: 7px;
+  background: transparent;
+  font-size: 40px;
+  color: white;
+  border: none;
+}
+
+#skewed-parts-button:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: -1%;
+  top: -5px;
+  background-color: tomato;
+  z-index: -1;
+  transform: skewX(30deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#skewed-parts-button:hover:before {
+  transform: skewX(0);
+  left: 50%;
+  top: 0;
+}
+
+#skewed-parts-button:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  right: 0;
+  bottom: -5px;
+  background-color: #0b9cf1;
+  z-index: -1;
+  transform: skewX(30deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#skewed-parts-button:hover:after {
+  transform: skewX(0);
+  right: 50%;
+  bottom: 0;
+}
+/*endregion*/
+
+/*region pulsing-button*/
+#pulsing-button {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 40px 80px;
+  background-color: #272727;
+  color: white;
+  border-radius: 100px;
+  font-size: 40px;
+  transition: all 0.3s;
+}
+
+#pulsing-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #272727;
+  border-radius: 100px;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+#pulsing-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#pulsing-button:hover:before {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+#pulsing-button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+/*endregion*/
+
+/*region diamond-layer-button*/
+#diamond-layer-button {
+  text-decoration: none;
+  position: relative;
+  padding: 40px 80px;
+  font-size: 40px;
+  background-color: transparent;
+  color: #7019ac;
+  border: 4px solid #7019ac;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+#diamond-layer-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-top: 65px solid #7019ac;
+  border-bottom: 65px solid #7019ac;
+  border-right: 65px solid transparent;
+  z-index: -1;
+  transition: all 0.5s;
+  transform: translateX(-100%);
+}
+
+#diamond-layer-button:hover:before {
+  transform: translateX(0%);
+}
+
+#diamond-layer-button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-top: 65px solid #7019ac;
+  border-bottom: 65px solid #7019ac;
+  border-left: 65px solid transparent;
+  z-index: -1;
+  transition: all 0.5s;
+  transform: translateX(100%);
+}
+
+#diamond-layer-button:hover:after {
+  transform: translateX(0%);
+}
+
+#diamond-layer-button:hover {
+  color: white;
+}
+/*endregion*/
+
   /*
    * Remove text-shadow in selection highlight:
    * https://twitter.com/miketaylr/status/12228805301
