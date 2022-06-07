@@ -11,11 +11,13 @@
    Base styles: opinionated defaults
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BenchNine&display=swap');
 
 html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+  font-family: sans-serif;
 }
 
 .element-container {
@@ -25,6 +27,10 @@ html {
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+button {
+  cursor: pointer;
 }
 
 /*region rotating-button*/
@@ -709,6 +715,171 @@ html {
 
 #border-swapping-button:hover:after {
   transform: rotateX(180deg);
+}
+/*endregion*/
+
+/*region border-growing-button*/
+#border-growing-button {
+  border: none;
+  padding: 40px 80px;
+  font-family: 'BenchNine', sans-serif;
+  font-size: 40px;
+  background-color: #c47135;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+#border-growing-button:before,
+#border-growing-button:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: -8px;
+  left: -8px;
+  border-top: 3px solid #c47135;
+  border-left: 3px solid #c47135;
+  transition: all 0.5s;
+}
+
+#border-growing-button:after {
+  top: auto;
+  left: auto;
+  bottom: -8px;
+  right: -8px;
+  border: none;
+  border-bottom: 3px solid #c47135;
+  border-right: 3px solid #c47135;
+}
+
+#border-growing-button:hover:before,
+#border-growing-button:hover:after {
+  width: 100%;
+  height: 100%;
+}
+/*endregion*/
+
+/*region first-letter-rotating-button*/
+#first-letter-rotating-button {
+  text-decoration: none;
+  padding: 40px 80px;
+  font-family: sans-serif;
+  font-size: 40px;
+  color: #272727;
+  border: 2px solid #272727;
+  background-color: transparent;
+  position: relative;
+  transition: all 0.3s;
+}
+
+#first-letter-rotating-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #272727;
+  transition: all 0.5s;
+  z-index: -1;
+  opacity: 0;
+}
+
+#first-letter-rotating-button span {
+  color: transparent;
+  position: relative;
+}
+
+#first-letter-rotating-button span:before {
+  content: 'H';
+  position: absolute;
+  color: #272727;
+  transition: all 0.3s;
+}
+
+#first-letter-rotating-button:hover {
+  color: white;
+}
+
+#first-letter-rotating-button:hover:before {
+  opacity: 1;
+  transform: rotate(15deg);
+}
+
+#first-letter-rotating-button:hover span:before {
+  color: white;
+  font-size: 80px;
+  transform: translate(-65%, -35%) rotate(360deg);
+}
+/*endregion*/
+
+/*region border-growing-button-2*/
+#border-growing-button-2 {
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  padding: 40px 80px;
+  font-size: 45px;
+  color: teal;
+  letter-spacing: 15px;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+#border-growing-button-2:before,
+#border-growing-button-2:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background-color: teal;
+  transition: all 0.5s;
+}
+
+#border-growing-button-2 span:before,
+#border-growing-button-2 span:after {
+  content: '';
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: teal;
+  transition: all 0.5s;
+}
+
+#border-growing-button-2 span:after {
+  bottom: auto;
+  left: auto;
+  right: 0;
+  top: -100%;
+}
+
+#border-growing-button-2:after {
+  top: auto;
+  left: auto;
+  right: -100%;
+  bottom: 0;
+}
+
+#border-growing-button-2:hover:before {
+  left: 0;
+}
+
+#border-growing-button-2:hover span:before {
+  bottom: 0;
+}
+
+#border-growing-button-2:hover:after {
+  right: 0;
+}
+
+#border-growing-button-2:hover span:after {
+  top: 0;
 }
 /*endregion*/
 
