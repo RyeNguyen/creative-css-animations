@@ -15,7 +15,161 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+  font-family: sans-serif;
 }
+
+.element-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*region image-effect-1*/
+#image-effect-1 {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+#image-effect-1 img {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+#image-effect-1 .caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: all 0.5s;
+  background-color: rgb(35, 35, 35);
+}
+
+#image-effect-1 h1 {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#image-effect-1 p {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+#image-effect-1:hover .caption {
+  opacity: 1;
+  background-color: rgba(35, 35, 35, 0.51);
+}
+
+#image-effect-1:hover img {
+  transform: scale(1.3) rotate(15deg);
+}
+/*endregion*/
+
+/*region image-effect-2*/
+#image-effect-2 {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+#image-effect-2 img {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+#image-effect-2 .caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.52);
+  transition: all 0.5s;
+  transform: translateX(-100%);
+}
+
+#image-effect-2 h1 {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#image-effect-2 p {
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+#image-effect-2:hover .caption {
+  transform: translateX(0);
+}
+
+#image-effect-2:hover img {
+  transform: rotate(-15deg) scale(1.3);
+}
+/*endregion*/
+
+/*region image-effect-3*/
+#image-effect-3 {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+#image-effect-3 img {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+#image-effect-3 .caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  transition: all 0.5s;
+  transform: translateX(-100%);
+}
+
+#image-effect-3 h1 {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#image-effect-3 p {
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+#image-effect-3:hover .caption {
+  transform: translateX(0);
+}
+
+#image-effect-3:hover img {
+  transform: translateX(100%);
+}
+/*endregion*/
 
 /*
  * Remove text-shadow in selection highlight:
